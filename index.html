@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GymPro Calculator Suite - Advanced Fitness Calculator</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="app-container">
+    <!-- ===== HEADER ===== -->
+    <header class="header">
+      <div class="header-inner">
+        <div class="header-brand">
+          <div class="header-logo">G</div>
+          <div>
+            <div class="header-title">GymPro Calculator Suite</div>
+            <div class="header-subtitle">Enter your details once — get all results instantly</div>
+          </div>
+        </div>
+        <div class="header-status">
+          <span class="status-dot"></span>
+          Live Calculations
+        </div>
+      </div>
+    </header>
+
+    <!-- ===== MAIN ===== -->
+    <main class="main-content">
+      <!-- Shared Inputs Panel -->
+      <div class="inputs-panel">
+        <div class="inputs-header">
+          <div class="inputs-icon">👤</div>
+          <div>
+            <div class="inputs-title">Your Profile</div>
+            <div class="inputs-desc">Enter once — all calculators update automatically</div>
+          </div>
+        </div>
+
+        <div class="inputs-grid">
+          <!-- Weight -->
+          <div class="input-group">
+            <label class="input-label"><span>⚖️</span> Weight (kg)</label>
+            <input type="number" id="input-weight" class="input-field" value="75" min="20" max="300" step="0.1" />
+          </div>
+          <!-- Height -->
+          <div class="input-group">
+            <label class="input-label"><span>📏</span> Height (cm)</label>
+            <input type="number" id="input-height" class="input-field" value="175" min="100" max="250" step="0.1" />
+          </div>
+          <!-- Age -->
+          <div class="input-group">
+            <label class="input-label"><span>🎂</span> Age</label>
+            <input type="number" id="input-age" class="input-field" value="25" min="10" max="100" />
+          </div>
+          <!-- Gender -->
+          <div class="input-group">
+            <label class="input-label"><span>👤</span> Gender</label>
+            <select id="input-gender" class="input-field">
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+          </div>
+          <!-- Activity Level -->
+          <div class="input-group">
+            <label class="input-label"><span>🏃</span> Activity</label>
+            <select id="input-activityLevel" class="input-field">
+              <option value="sedentary">Sedentary</option>
+              <option value="light">Lightly Active</option>
+              <option value="moderate" selected>Moderately Active</option>
+              <option value="active">Very Active</option>
+              <option value="very_active">Extremely Active</option>
+            </select>
+          </div>
+          <!-- Goal -->
+          <div class="input-group">
+            <label class="input-label"><span>🎯</span> Goal</label>
+            <select id="input-goal" class="input-field">
+              <option value="cut">Cut (Lose Fat)</option>
+              <option value="maintain" selected>Maintain</option>
+              <option value="bulk">Bulk (Build Muscle)</option>
+            </select>
+          </div>
+          <!-- Waist -->
+          <div class="input-group">
+            <label class="input-label"><span>📐</span> Waist (cm)</label>
+            <input type="number" id="input-waist" class="input-field" value="85" min="40" max="200" />
+          </div>
+          <!-- Neck -->
+          <div class="input-group">
+            <label class="input-label"><span>📐</span> Neck (cm)</label>
+            <input type="number" id="input-neck" class="input-field" value="38" min="20" max="60" />
+          </div>
+          <!-- Hip -->
+          <div class="input-group">
+            <label class="input-label"><span>📐</span> Hip (cm)</label>
+            <input type="number" id="input-hip" class="input-field" value="95" min="50" max="200" />
+          </div>
+          <!-- Bench Press -->
+          <div class="input-group">
+            <label class="input-label"><span>🏋️</span> Bench Press (kg)</label>
+            <input type="number" id="input-benchPress" class="input-field" value="80" min="10" max="400" />
+          </div>
+          <!-- Body Fat (optional) -->
+          <div class="input-group">
+            <label class="input-label"><span>📊</span> Body Fat % (opt)</label>
+            <input type="number" id="input-bodyFat" class="input-field" value="15" min="3" max="60" step="0.1" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab Navigation -->
+      <div class="tabs-container">
+        <button class="tab-btn active" data-tab="all">📊 All Calculators</button>
+        <button class="tab-btn" data-tab="body">🏋️ Body Metrics</button>
+        <button class="tab-btn" data-tab="nutrition">🥗 Nutrition</button>
+        <button class="tab-btn" data-tab="strength">💪 Strength</button>
+        <button class="tab-btn" data-tab="health">❤️ Health</button>
+      </div>
+
+      <!-- Calculator Grid (rendered by JS) -->
+      <div class="calc-grid" id="calcGrid"></div>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <p>GymPro Calculator Suite — All calculations are estimates. Consult a professional for personalized advice.</p>
+      </footer>
+    </main>
+  </div>
+
+  <script src="/script.js"></script>
+</body>
+</html>
